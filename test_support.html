@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support 支援頁面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #4A90E2;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      color: #4A90E2;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    .contact {
+      margin-top: 20px;
+      line-height: 1.8;
+    }
+
+    a.button {
+      display: inline-block;
+      background: #4A90E2;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-top: 10px;
+      transition: background 0.3s;
+    }
+
+    a.button:hover {
+      background: #357ABD;
+    }
+
+    footer {
+      text-align: center;
+      color: #999;
+      font-size: 0.9rem;
+      padding: 20px;
+    }
+
+    /* 顯示即時訊息的樣式 */
+    .status-box {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #4A90E2;
+      border-radius: 8px;
+      background: #f0f8ff;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Support 支援中心</h1>
+  </header>
+
+  <main>
+    <h2>我們能提供什麼協助？</h2>
+    <p>如果你在使用我們的系統時遇到問題或需要幫助，歡迎透過以下方式聯絡我們。</p>
+
+    <div class="contact">
+      <h2>聯絡我們</h2>
+      <p>📧 Email：<a href="mailto:your-email@example.com">your-email@example.com</a></p>
+      <p>🌐 官方網站：<a href="https://yourwebsite.com" target="_blank">https://yourwebsite.com</a></p>
+      <p>📄 隱私權政策：<a href="privacy.html">查看隱私權政策</a></p>
+      <a class="button" href="/">返回首頁</a>
+    </div>
+
+    <!-- 即時訊息 -->
+    <div class="status-box" id="statusBox">
+      🔄 載入最新公告中...
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 你的網站名稱. All Rights Reserved.
+  </footer>
+
+  <script>
+    // 模擬伺服器回傳的不同訊息
+    const messages = [
+      "目前系統運作正常 ✅",
+      "我們正在進行維護，部分功能可能暫停 🔧",
+      "已新增新功能，快去看看吧 🚀",
+      "如果有問題，請透過上方聯絡我們 📩"
+    ];
+    let index = 0;
+
+    function updateStatus() {
+      const box = document.getElementById('statusBox');
+      box.textContent = messages[index];
+      index = (index + 1) % messages.length;
+    }
+
+    // 先跑一次
+    updateStatus();
+    // 每5秒換一次訊息
+    setInterval(updateStatus, 5000);
+  </script>
+</body>
+</html>
